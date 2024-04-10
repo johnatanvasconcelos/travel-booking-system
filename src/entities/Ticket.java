@@ -4,13 +4,24 @@ import java.time.LocalDate;
 
 public class Ticket {
     private String origin;
-    private String destination;
-    private double price;
+    private int destination;
     private LocalDate date;
+
+    public Ticket(){
+
+    }
 
     public Ticket(String origin, String destination, LocalDate date){
         this.origin = origin;
         this.date = date;
+    }
+
+    public String mainMenuString(){
+       return "\nChoose your destination: "
+        + "\n1- Buenos Aires "
+        + "\n2- Paris"
+        + "\n3- Roma"
+        + "\n\n4- Exit";
     }
 
     public String getOrigin() {
@@ -21,11 +32,11 @@ public class Ticket {
         this.origin = origin;
     }
 
-    public String getDestination() {
+    public int getDestination() {
         return destination;
     }
 
-    public void setDestination(String destination) {
+    public void setDestination(int destination) {
         this.destination = destination;
     }
 
