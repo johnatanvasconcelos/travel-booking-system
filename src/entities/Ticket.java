@@ -1,12 +1,17 @@
 package entities;
 
 import java.time.LocalDate;
+import java.util.Random;
 
 public class Ticket {
     private String origin;
     private String destination;
     private LocalDate date;
     private String days;
+    
+    Random random = new Random();
+    int code = random.nextInt(900000) + 100000;
+    String ticketCode = String.format("%06d", code);
 
     public Ticket(){
 
@@ -110,7 +115,9 @@ public class Ticket {
     }
     
     public String getTicketInfo(String destination, String days, String classType) {
-    	return "Detiny: " 
+    	return "Ticket code: " 
+    			+ ticketCode
+    			+ "\nDetiny: " 
     			+ destination 
     			+ "\nDuration: " 
     			+ days 
